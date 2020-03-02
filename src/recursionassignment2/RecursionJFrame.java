@@ -9,13 +9,15 @@ package recursionassignment2;
  *
  * @author k00253718
  */
-public class RecursionJFrame extends javax.swing.JFrame {
+public class RecursionJFrame extends javax.swing.JFrame
+{
 
     /**
      * Creates new form RecursionJFrame
      */
-    public RecursionJFrame() {
-        initComponents();
+    public RecursionJFrame()
+    {
+	initComponents();
     }
 
     /**
@@ -25,7 +27,8 @@ public class RecursionJFrame extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         number1JLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -36,6 +39,7 @@ public class RecursionJFrame extends javax.swing.JFrame {
         exponentialJRadioButton = new javax.swing.JRadioButton();
         gcdJRadioButton = new javax.swing.JRadioButton();
         factorialJRadioButton = new javax.swing.JRadioButton();
+        placeJRadioButton = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Recursion Assignment");
@@ -54,12 +58,43 @@ public class RecursionJFrame extends javax.swing.JFrame {
 
         exponentialJRadioButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exponentialJRadioButton.setText("Exponential ");
+        exponentialJRadioButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                exponentialJRadioButtonActionPerformed(evt);
+            }
+        });
 
         gcdJRadioButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         gcdJRadioButton.setText("GCD");
+        gcdJRadioButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                gcdJRadioButtonActionPerformed(evt);
+            }
+        });
 
         factorialJRadioButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         factorialJRadioButton.setText("Factorial");
+        factorialJRadioButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                factorialJRadioButtonActionPerformed(evt);
+            }
+        });
+
+        placeJRadioButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        placeJRadioButton.setText("Place");
+        placeJRadioButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                placeJRadioButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,15 +111,19 @@ public class RecursionJFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(num2JTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(num1JTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(exponentialJRadioButton)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(gcdJRadioButton)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(factorialJRadioButton))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(exponentialJRadioButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(gcdJRadioButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(factorialJRadioButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(placeJRadioButton))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,46 +142,95 @@ public class RecursionJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exponentialJRadioButton)
                     .addComponent(gcdJRadioButton)
-                    .addComponent(factorialJRadioButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(factorialJRadioButton)
+                    .addComponent(placeJRadioButton))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void factorialJRadioButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_factorialJRadioButtonActionPerformed
+    {//GEN-HEADEREND:event_factorialJRadioButtonActionPerformed
+	int number = Integer.parseInt(num1JTextField.getText());
+
+	outputJTextArea.setText("" + factorialRecursion.factorial(number));
+    }//GEN-LAST:event_factorialJRadioButtonActionPerformed
+
+    private void exponentialJRadioButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_exponentialJRadioButtonActionPerformed
+    {//GEN-HEADEREND:event_exponentialJRadioButtonActionPerformed
+	int base = Integer.parseInt(num1JTextField.getText());
+
+	int exponent = Integer.parseInt(num2JTextField.getText());
+
+	outputJTextArea.setText("" + PowerRecursion.power(base, exponent));
+
+    }//GEN-LAST:event_exponentialJRadioButtonActionPerformed
+
+    private void gcdJRadioButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_gcdJRadioButtonActionPerformed
+    {//GEN-HEADEREND:event_gcdJRadioButtonActionPerformed
+	int m = Integer.parseInt(num1JTextField.getText());
+
+	int n = Integer.parseInt(num2JTextField.getText());
+
+	outputJTextArea.setText("" + GCDRecursion.gcd(m, n));
+    }//GEN-LAST:event_gcdJRadioButtonActionPerformed
+
+    private void placeJRadioButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_placeJRadioButtonActionPerformed
+    {//GEN-HEADEREND:event_placeJRadioButtonActionPerformed
+     int number = Integer.parseInt(num1JTextField.getText());
+     
+     outputJTextArea.setText("" + PlaceRecursion.place(number));
+     
+    }//GEN-LAST:event_placeJRadioButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+    public static void main(String args[])
+    {
+	/* Set the Nimbus look and feel */
+	//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+	/* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RecursionJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RecursionJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RecursionJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RecursionJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+	 */
+	try
+	{
+	    for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
+	    {
+		if ("Nimbus".equals(info.getName()))
+		{
+		    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+		    break;
+		}
+	    }
+	}
+	catch (ClassNotFoundException ex)
+	{
+	    java.util.logging.Logger.getLogger(RecursionJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	}
+	catch (InstantiationException ex)
+	{
+	    java.util.logging.Logger.getLogger(RecursionJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	}
+	catch (IllegalAccessException ex)
+	{
+	    java.util.logging.Logger.getLogger(RecursionJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	}
+	catch (javax.swing.UnsupportedLookAndFeelException ex)
+	{
+	    java.util.logging.Logger.getLogger(RecursionJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	}
+	//</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new RecursionJFrame().setVisible(true);
-            }
-        });
+	/* Create and display the form */
+	java.awt.EventQueue.invokeLater(new Runnable()
+	{
+	    public void run()
+	    {
+		new RecursionJFrame().setVisible(true);
+	    }
+	});
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -155,5 +243,6 @@ public class RecursionJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField num2JTextField;
     private javax.swing.JLabel number1JLabel;
     private javax.swing.JTextArea outputJTextArea;
+    private javax.swing.JRadioButton placeJRadioButton;
     // End of variables declaration//GEN-END:variables
 }
